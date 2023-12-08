@@ -24,7 +24,7 @@ public class InputView {
 
     public static int inputTableNumber() {
         while(true) {
-            System.out.println("## 테이블을 선택하세요.");
+            System.out.println("\n## 테이블을 선택하세요.");
 
             int tableNum = scanner.nextInt();
             try {
@@ -38,7 +38,7 @@ public class InputView {
 
     public static int inputMenu() {
         while(true) {
-            System.out.println("## 등록할 메뉴를 선택하세요.");
+            System.out.println("\n## 등록할 메뉴를 선택하세요.");
 
             int menuNum = scanner.nextInt();
             try {
@@ -53,7 +53,7 @@ public class InputView {
 
     public static int inputMenuNum(int tableNumber, int menuUniqueNumber) {
         while(true) {
-            System.out.println("## 메뉴의 수량을 입력하세요.");
+            System.out.println("\n## 메뉴의 수량을 입력하세요.");
 
             int menuNum = scanner.nextInt();
             try {
@@ -68,7 +68,7 @@ public class InputView {
 
     public static int inputPaymentMethod(int tableNumber) {
         while(true) {
-            System.out.printf("## %d번 테이블의 결제를 진행합니다.", tableNumber);
+            System.out.printf("\n## %d번 테이블의 결제를 진행합니다.", tableNumber);
             System.out.println("## 신용 카드는 1번, 현금은 2번");
 
             int paymentMethod = scanner.nextInt();

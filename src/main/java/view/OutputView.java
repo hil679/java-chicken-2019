@@ -11,7 +11,7 @@ public class OutputView {
     private static final String BOTTOM_LINE = "└ %s ┘";
 
     public static void printTables(final List<Table> tables) {
-        System.out.println("## 테이블 목록");
+        System.out.println("\n## 테이블 목록");
         final int size = tables.size();
         printLine(TOP_LINE, size);
         printTableNumbers(tables);
@@ -19,6 +19,7 @@ public class OutputView {
     }
 
     public static void printMenus(final List<Menu> menus) {
+        System.out.print("\n");
         for (final Menu menu : menus) {
             System.out.println(menu);
         }
@@ -51,7 +52,7 @@ public class OutputView {
     }
 
     public static void printMainFeatures() {
-        System.out.println("## 메인화면");
+        System.out.println("\n## 메인화면");
 
         StringBuilder mainFeatures = new StringBuilder();
         mainFeatures.append("1 - 주문등록\n");
@@ -66,7 +67,7 @@ public class OutputView {
     }
 
     public static void printOrders(Table table) {
-        System.out.println("## 주문 내역");
+        System.out.println("\n## 주문 내역");
         System.out.println("메뉴 수량 금액");
         System.out.println(table.getOrders());
     }
