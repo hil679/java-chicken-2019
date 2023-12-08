@@ -37,7 +37,17 @@ public class InputView {
     }
 
     public static int inputMenu() {
-        return 0;
+        while(true) {
+            System.out.println("## 등록할 메뉴를 선택하세요.");
+
+            int menuNum = scanner.nextInt();
+            try {
+                inputValidator.checkMenuNumber(menuNum);
+                return menuNum;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
     }
 
 
