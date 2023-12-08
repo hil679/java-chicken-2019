@@ -25,6 +25,10 @@ public class Order {
         return totalPrice;
     }
 
+    public int getOrderPrice(int paymentMethod) {
+        return getOrderPriceBeforeDiscount() - getDiscountPrice(paymentMethod);
+    }
+
     private int getDiscountPrice(int paymentMethod) {
         int currentDiscountPrice = getDiscountPriceByChicken();
 

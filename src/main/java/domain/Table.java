@@ -25,4 +25,8 @@ public class Table {
     public void orderMenu(int menuUniqueNumber, int menuNum) {
         orders.orderMenu(menuUniqueNumber, menuNum);
     }
+
+    public int getTotalPayment(int paymentMethod) {
+        return orders.getOrderPrice(paymentMethod);
+    }
 }
