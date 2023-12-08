@@ -30,6 +30,10 @@ public class Table {
         return orders.getOrderPrice(paymentMethod);
     }
 
+    public boolean hasNotOrders() {
+        return orders.hasNotOrder();
+    }
+
     public String getOrders() {
         return orders.toString();
     }

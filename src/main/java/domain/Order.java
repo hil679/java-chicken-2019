@@ -52,6 +52,10 @@ public class Order {
         return (int) (currentPrice * 0.95);
     }
 
+    public boolean hasNotOrder() {
+        return orders.size() < 1;
+    }
+
     @Override
     public String toString() {
         StringBuilder orderList = new StringBuilder();
