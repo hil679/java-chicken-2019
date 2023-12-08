@@ -64,4 +64,20 @@ public class InputView {
             }
         }
     }
+
+
+    public static int inputPaymentMethod(int tableNumber) {
+        while(true) {
+            System.out.printf("## %d번 테이블의 결제를 진행합니다.", tableNumber);
+            System.out.println("## 신용 카드는 1번, 현금은 2번");
+
+            int paymentMethod = scanner.nextInt();
+            try {
+                inputValidator.checkPaymentMethod(paymentMethod);
+                return paymentMethod;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
+    }
 }
