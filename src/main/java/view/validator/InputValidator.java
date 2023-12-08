@@ -1,5 +1,6 @@
 package view.validator;
 
+import domain.MenuRepository;
 import domain.Table;
 import domain.TableRepository;
 
@@ -24,5 +25,17 @@ public class InputValidator {
         return !TableRepository.tables()
                 .stream()
                 .anyMatch(table -> table.isEqualTableNumber(tableNumber));
+    }
+
+    public void checkMenuNumber(int menuNumber) {
+        if(isNotMenuNumber(menuNumber)) {
+            throw new IllegalArgumentException("[ERROR] 정확한 메뉴 번호를 입력해주세요.");
+        }
+    }
+
+    private boolean isNotMenuNumber(int menuNumber) {
+        return !MenuRepository.menus()
+                .stream()
+                .anyMatch(menu -> menu.isEqualMenuNumber(menuNumber));
     }
 }
