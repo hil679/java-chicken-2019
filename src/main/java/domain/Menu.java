@@ -21,4 +21,8 @@ public class Menu {
     public boolean isEqualMenuNumber(int number) {
         return this.number == number;
     }
+
+    public boolean isChicken() {
+        return category.equals(Category.CHICKEN);
+    }
 }
