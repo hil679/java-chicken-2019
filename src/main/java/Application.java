@@ -16,26 +16,35 @@ public class Application {
 
             final int tableNumber = InputView.inputTableNumber();
             Table table = TableRepository.findByNumber(tableNumber);
-            if(mainFeature == 1) {
-                final List<Menu> menus = MenuRepository.menus();
-                OutputView.printMenus(menus);
 
-                final int menuUniqueNumber = InputView.inputMenu();
-                final int menuNumber = InputView.inputMenuNum(tableNumber, menuUniqueNumber);
-                table.orderMenu(menuUniqueNumber, menuNumber);
+            if(mainFeature == 1) {
+                order(tableNumber, table);
             } else{
-                int paymentMethod = InputView.inputPaymentMethod(tableNumber);
-                OutputView.printOrders(table);
-                OutputView.printTotalPayment(table, paymentMethod);
-                table.clearOrders();
+                pay(tableNumber, table);
             }
+
             mainFeature = getMainFeatures();
         }
-
     }
 
     public static int getMainFeatures() {
         OutputView.printMainFeatures();
         return InputView.inputMain();
+    }
+
+    public static void order(int tableNumber, Table table) {
+        final List<Menu> menus = MenuRepository.menus();
+        OutputView.printMenus(menus);
+
+        final int menuUniqueNumber = InputView.inputMenu();
+        final int menuNumber = InputView.inputMenuNum(tableNumber, menuUniqueNumber);
+        table.orderMenu(menuUniqueNumber, menuNumber);
+    }
+
+    public static void pay(int tableNumber, Table table) {
+        int paymentMethod = InputView.inputPaymentMethod(tableNumber);
+        OutputView.printOrders(table);
+        OutputView.printTotalPayment(table, paymentMethod);
+        table.clearOrders();
     }
 }
