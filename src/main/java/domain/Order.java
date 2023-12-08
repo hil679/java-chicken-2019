@@ -47,6 +47,10 @@ public class Order {
         return (int) (currentPrice * 0.95);
     }
 
+    public void clearOrders() {
+        orders.clear();
+    }
+
     public boolean hasNotOrder() {
         return orders.size() < 1;
     }

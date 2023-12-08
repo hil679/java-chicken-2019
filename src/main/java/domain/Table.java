@@ -37,4 +37,8 @@ public class Table {
     public String getOrders() {
         return orders.toString();
     }
+
+    public void clearOrders() {
+        orders.clearOrders();
+    }
 }
