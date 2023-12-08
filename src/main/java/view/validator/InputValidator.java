@@ -52,4 +52,14 @@ public class InputValidator {
         int totalMunuNum = menuNumber + table.getOrderMenuNum(menuUniqueNumber);
         return menuNumber < 1 || totalMunuNum > 99;
     }
+
+    public void checkPaymentMethod(int paymentMethod) {
+        if(isWrongPayment(paymentMethod)) {
+            throw new IllegalArgumentException("[ERROR] 올바른 지불 수단을 입력해주세요.");
+        }
+    }
+
+    private boolean isWrongPayment(int paymentMethod) {
+        return paymentMethod != 1 && paymentMethod != 2;
+    }
 }
