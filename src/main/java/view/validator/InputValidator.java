@@ -4,6 +4,11 @@ import domain.MenuRepository;
 import domain.Table;
 import domain.TableRepository;
 
+import static constant.Menu.MAX_MENU_NUMBER;
+import static constant.Menu.UNABLE_MENU_NUMBER;
+import static constant.Payment.CARD;
+import static constant.Payment.CASH;
+
 public class InputValidator {
     public void checkMainFeatures(int mainFeatureNum){
         if(isNotMainFeatureNum(mainFeatureNum)) {
@@ -49,7 +54,8 @@ public class InputValidator {
     private boolean isNotMenuNumber(int menuNumber, int tableNumber, int menuUniqueNumber) {
         Table table = TableRepository.findByNumber(tableNumber);
         int totalMunuNum = menuNumber + table.getOrderMenuNum(menuUniqueNumber);
-        return menuNumber < 1 || totalMunuNum > 99;
+        return menuNumber <= UNABLE_MENU_NUMBER.getValue()
+                || totalMunuNum > MAX_MENU_NUMBER.getValue();
     }
 
     public void checkPaymentMethod(int paymentMethod) {
@@ -59,6 +65,6 @@ public class InputValidator {
     }
 
     private boolean isWrongPayment(int paymentMethod) {
-        return paymentMethod != 1 && paymentMethod != 2;
+        return paymentMethod != CARD.getValue() && paymentMethod != CASH.getValue();
     }
 }

@@ -7,17 +7,20 @@ import view.OutputView;
 
 import java.util.List;
 
+import static constant.MainFeature.EXIT;
+import static constant.MainFeature.ORDER;
+
 public class Application {
     public static void main(String[] args) {
         int mainFeature = getMainFeatures();
-        while(mainFeature != 3) {
+        while(mainFeature != EXIT.getFeature()) {
             final List<Table> tables = TableRepository.tables();
             OutputView.printTables(tables);
 
             final int tableNumber = InputView.inputTableNumber();
             Table table = TableRepository.findByNumber(tableNumber);
 
-            if(mainFeature == 1) {
+            if(mainFeature == ORDER.getFeature()) {
                 order(tableNumber, table);
             } else{
                 pay(tableNumber, table);
