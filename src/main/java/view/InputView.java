@@ -23,8 +23,17 @@ public class InputView {
     }
 
     public static int inputTableNumber() {
-        System.out.println("## 주문할 테이블을 선택하세요.");
-        return scanner.nextInt();
+        while(true) {
+            System.out.println("## 주문할 테이블을 선택하세요.");
+
+            int tableNum = scanner.nextInt();
+            try {
+                inputValidator.checkTableNumber(tableNum);
+                return tableNum;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
     }
 
     public static int inputMenu() {
