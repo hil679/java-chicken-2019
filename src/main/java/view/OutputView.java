@@ -37,4 +37,14 @@ public class OutputView {
         }
         System.out.println();
     }
+
+    public static void printMainFeatures() {
+        System.out.println("## 메인화면");
+
+        StringBuilder mainFeatures = new StringBuilder();
+        mainFeatures.append("1 - 주문등록\n");
+        mainFeatures.append("2 - 결제하기\n");
+        mainFeatures.append("3 - 프로그램 종료\n");
+        System.out.println(mainFeatures.toString());
+    }
 }
