@@ -16,6 +16,15 @@ public class Order {
         return orders.getOrDefault(menu, 0);
     }
 
+    private int getOrderPriceBeforeDiscount() {
+        int totalPrice = 0;
+        for(Menu menu : orders.keySet()) {
+            totalPrice += orders.get(menu) * menu.getPrice();
+        }
+
+        return totalPrice;
+    }
+
     private int getDiscountPrice(int paymentMethod) {
         int currentDiscountPrice = getDiscountPriceByChicken();
 
