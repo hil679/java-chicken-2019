@@ -12,7 +12,7 @@ public class InputValidator {
     }
 
     private boolean isNotMainFeatureNum(int mainFeatureNum) {
-        return 1 <= mainFeatureNum && mainFeatureNum <= 3;
+        return 1 > mainFeatureNum && mainFeatureNum > 3;
     }
 
     public void checkTableNumber(int tableNumber) {
