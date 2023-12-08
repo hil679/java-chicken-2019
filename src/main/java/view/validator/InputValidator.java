@@ -1,6 +1,5 @@
 package view.validator;
 
-import domain.Menu;
 import domain.MenuRepository;
 import domain.Table;
 import domain.TableRepository;
