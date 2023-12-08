@@ -26,16 +26,11 @@ public class Order {
     }
 
     public int getOrderPrice(int paymentMethod) {
-        return getOrderPriceBeforeDiscount() - getDiscountPrice(paymentMethod);
-    }
-
-    private int getDiscountPrice(int paymentMethod) {
-        int currentDiscountPrice = getDiscountPriceByChicken();
-
+        int currentPrice = getOrderPriceBeforeDiscount() - getDiscountPriceByChicken();
         if(paymentMethod == 2) {
-            currentDiscountPrice = getDiscountPriceByCash(currentDiscountPrice);
+            return getDiscountPriceByCash(currentPrice);
         }
-        return currentDiscountPrice;
+        return currentPrice;
     }
 
     private int getDiscountPriceByChicken() {
