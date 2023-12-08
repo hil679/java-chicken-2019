@@ -25,4 +25,8 @@ public class Order {
         }
         return 10000 * (chickenNum / 10);
     }
+
+    private int getDiscountPriceByCash(int currentPrice) {
+        return (int) (currentPrice * 0.95);
+    }
 }
