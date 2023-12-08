@@ -52,4 +52,10 @@ public class OutputView {
         System.out.println("## 최종 결제할 금액");
         System.out.println(table.getTotalPayment(paymentMethod) + "원");
     }
+
+    public static void printOrders(Table table) {
+        System.out.println("## 주문 내역");
+        System.out.println("메뉴 수량 금액");
+        System.out.println(table.getOrders());
+    }
 }

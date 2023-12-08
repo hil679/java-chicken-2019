@@ -29,4 +29,8 @@ public class Table {
     public int getTotalPayment(int paymentMethod) {
         return orders.getOrderPrice(paymentMethod);
     }
+
+    public String getOrders() {
+        return orders.toString();
+    }
 }

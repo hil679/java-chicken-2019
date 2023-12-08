@@ -51,4 +51,20 @@ public class Order {
     private int getDiscountPriceByCash(int currentPrice) {
         return (int) (currentPrice * 0.95);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder orderList = new StringBuilder();
+        for(Menu menu : orders.keySet()) {
+            int menuNum = orders.get(menu);
+            orderList.append(menu.getName());
+            orderList.append(" ");
+            orderList.append(menuNum);
+            orderList.append(" ");
+            orderList.append(menuNum * menu.getPrice());
+            orderList.append("\n");
+        }
+
+        return orderList.toString();
+    }
 }
