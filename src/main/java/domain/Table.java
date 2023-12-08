@@ -6,6 +6,7 @@ public class Table {
 
     public Table(final int number) {
         this.number = number;
+        orders = new Order();
     }
 
     @Override
@@ -19,5 +20,9 @@ public class Table {
 
     public int getOrderMenuNum(int menuUniqueNumber) {
         return orders.getOrderMenuNum(menuUniqueNumber);
+    }
+
+    public void orderMenu(int menuUniqueNumber, int menuNum) {
+        orders.orderMenu(menuUniqueNumber, menuNum);
     }
 }
