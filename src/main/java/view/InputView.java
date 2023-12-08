@@ -51,7 +51,17 @@ public class InputView {
     }
 
 
-    public static int inputMenuNum() {
-        return 0;
+    public static int inputMenuNum(int tableNumber, int menuUniqueNumber) {
+        while(true) {
+            System.out.println("## 메뉴의 수량을 입력하세요.");
+
+            int menuNum = scanner.nextInt();
+            try {
+                inputValidator.checkMenuNumber(menuNum, tableNumber, menuUniqueNumber);
+                return menuNum;
+            } catch (IllegalArgumentException exception) {
+                System.out.println(exception.getMessage());
+            }
+        }
     }
 }
