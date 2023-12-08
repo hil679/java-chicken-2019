@@ -32,7 +32,7 @@ public class Order {
     private int getDiscountPrice(int paymentMethod) {
         int currentDiscountPrice = getDiscountPriceByChicken();
 
-        if(paymentMethod == 1) {
+        if(paymentMethod == 2) {
             currentDiscountPrice = getDiscountPriceByCash(currentDiscountPrice);
         }
         return currentDiscountPrice;
