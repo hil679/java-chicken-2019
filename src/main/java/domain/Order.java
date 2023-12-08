@@ -15,4 +15,14 @@ public class Order {
         Menu menu = MenuRepository.findByNumber(menuUniqueNumber);
         return orders.getOrDefault(menu, 0);
     }
+
+    private int getDiscountPriceByChicken() {
+        int chickenNum = 0;
+        for(Menu menu : orders.keySet()) {
+            if(menu.isChicken()) {
+                chickenNum += orders.get(menu);
+            }
+        }
+        return 10000 * (chickenNum / 10);
+    }
 }
