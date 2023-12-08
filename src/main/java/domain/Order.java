@@ -16,6 +16,15 @@ public class Order {
         return orders.getOrDefault(menu, 0);
     }
 
+    private int getDiscountPrice(int paymentMethod) {
+        int currentDiscountPrice = getDiscountPriceByChicken();
+
+        if(paymentMethod == 1) {
+            currentDiscountPrice = getDiscountPriceByCash(currentDiscountPrice);
+        }
+        return currentDiscountPrice;
+    }
+
     private int getDiscountPriceByChicken() {
         int chickenNum = 0;
         for(Menu menu : orders.keySet()) {
