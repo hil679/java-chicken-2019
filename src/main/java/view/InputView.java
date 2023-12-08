@@ -24,7 +24,7 @@ public class InputView {
 
     public static int inputTableNumber() {
         while(true) {
-            System.out.println("## 주문할 테이블을 선택하세요.");
+            System.out.println("## 테이블을 선택하세요.");
 
             int tableNum = scanner.nextInt();
             try {
