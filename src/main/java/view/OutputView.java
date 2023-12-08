@@ -47,4 +47,9 @@ public class OutputView {
         mainFeatures.append("3 - 프로그램 종료\n");
         System.out.println(mainFeatures.toString());
     }
+
+    public static void printTotalPayment(Table table, int paymentMethod) {
+        System.out.println("## 최종 결제할 금액");
+        System.out.println(table.getTotalPayment(paymentMethod) + "원");
+    }
 }
