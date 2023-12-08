@@ -42,7 +42,7 @@ public class InputView {
 
             int menuNum = scanner.nextInt();
             try {
-                inputValidator.checkMenuNumber(menuNum);
+                inputValidator.checkMenu(menuNum);
                 return menuNum;
             } catch (IllegalArgumentException exception) {
                 System.out.println(exception.getMessage());

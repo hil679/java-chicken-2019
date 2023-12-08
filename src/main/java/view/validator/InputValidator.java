@@ -27,13 +27,13 @@ public class InputValidator {
                 .anyMatch(table -> table.isEqualTableNumber(tableNumber));
     }
 
-    public void checkMenuNumber(int menuNumber) {
-        if(isNotMenuNumber(menuNumber)) {
+    public void checkMenu(int menuNumber) {
+        if(isNotMenu(menuNumber)) {
             throw new IllegalArgumentException("[ERROR] 정확한 메뉴 번호를 입력해주세요.");
         }
     }
 
-    private boolean isNotMenuNumber(int menuNumber) {
+    private boolean isNotMenu(int menuNumber) {
         return !MenuRepository.menus()
                 .stream()
                 .anyMatch(menu -> menu.isEqualMenuNumber(menuNumber));
